@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Val() method</title>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+</head>
+<body>
+   <p>Name:<input type="text" id="name" value="Manisha Pal"></p> 
+    <button>Show value</button>
+    <script>
+        $(document).ready(function () {
+          $("button").click(function(){
+            alert("value: " + $("#name").val());
+          });
+        });
+    </script>
+    
+</body>
+</html>

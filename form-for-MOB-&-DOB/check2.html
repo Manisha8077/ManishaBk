@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- jQuery UI -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<style>
+    #calendar-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    /* height: 25px; */
+}
+/* #datepicker{
+    height: 25px;
+} */
+
+</style>
+</head>
+<body>
+    <form id="myForm">
+        <label for="datepicker">Select a Date:</label>
+        <input type="text" id="datepicker" name="datepicker">
+        <i id="calendar-icon" class="fa fa-calendar"></i>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        $(function() {
+    $("#datepicker").datepicker({
+        dateFormat: "yy-mm-dd", // Customize the date format
+        showOn: "button",      // Show the calendar when clicking the button
+        // buttonImage: "https://cdn-icons-png.flaticon.com/512/2370/2370264.png", // Set the calendar icon image
+        buttonImageOnly: true, // Display only the icon, no input field
+    });
+
+    $("#calendar-icon").click(function() {
+        $("#datepicker").datepicker("show");
+    });
+
+    $("#myForm").submit(function(event) {
+        event.preventDefault();
+        var selectedDate = $("#datepicker").val();
+        alert("Selected Date: " + selectedDate);
+        // You can process the selected date here.
+    });
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+     .form-control{
+          height: calc(2.3em + 0.75rem + 0px);
+         
+}
+        .error-message {
+            color: red;
+            display: none;
+        }
+        .col-md-6{
+            font-family: Montserrat,Sans-Serif;
+            font-size: 18px;
+            font-weight: 600;
+        
+        }
+        .col-md-4{
+             font-family: Montserrat,Sans-Serif;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 20px;
+        }
+            
+          .col-md-14{
+             font-family: Montserrat,Sans-Serif;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .error-message {
+            color: #F8981C;
+            display: none;
+        }
+    </style>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <div class="container mt-5">
+        <form id="loan-form" onsubmit="validateForm(event) ">
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    <label for="full_name">Enter Full Name</label><span style="color: red;">*</span>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
+                    <div class="error-message" id="name-error">Please enter a valid name. </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    
+                    <label for="phone_number">Enter Number</label><span style="color: red;">*</span>
+                    
+                    <input type="tel" name="phone_no" id="number" class="form-control" placeholder="Enter your phone number" required maxlength="10">
+                    <div class="error-message" id="phone-error">Please enter a valid phone number.</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    <label for="occupation">Occupation</label><span style="color: red;">*</span>
+                    <select name="occupation" id="occupation" class="form-control" onchange="handleOccupationChange()" required>
+                        <option value="" selected> Select occupation</option>
+                        <option value="Salaried">Salaried</option>
+                        <option value="Business Owner">Business Owner</option>
+                        <option value="Self-employed Professional">Self-employed Professional</option>
+                    </select>
+                    <div class="error-message" id="occupation-error">Please enter a valid occupation.</div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="loan_type">Loan Type</label><span style="color: red;">*</span>
+                    <select name="loan_type" id="loan_type" class="form-control" required>
+                        <option value="">Select loan type</option>
+                    </select>
+                    <div class="error-message" id="loan-error">Please select a loan type.</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 form-group">
+                    <label for="pincode">Enter Pincode</label><span style="color: red;">*</span>
+                    <input type="number" name="pincode" id="pincode" class="form-control" placeholder="Enter city pincode" onchange="getCityStateFromPincode(this.value)" required>
+                    <div class="error-message" id="pincode-error">Please enter a valid pincode.</div>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="city">Enter City</label><span style="color: red;">*</span>
+                    <input type="text" name="city" id="city" class="form-control" placeholder="Enter your city" required>
+                    <div class="error-message" id="city-error">Please enter a valid city.</div>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="message">State</label><span style="color: red;">*</span>
+                    
+                    <select id="stateName" class="form-control">
+                        <option value="nocityenter">Select state</option>
+                    </select>
+                    <div class="error-message" id="state-error">Please select a state.</div>
+                </div>
+            </div>
+            <div class="col-md-14 form-group">
+                <label for="message">Message or Comment</label><span style="color: red;">*</span>
+                <textarea name="message" id="message" value="message" class="form-control" rows="4" placeholder="Write your message"></textarea>
+                <div class="error-message" id="message-error">Please enter a valid message.</div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        <div id="messageDiv"></div>
+    </div>
+
+    <script>
+        function handleOccupationChange() {
+            
+            var occupationSelect = document.getElementById("occupation");
+            var loanTypeSelect = document.getElementById("loan_type");
+            var selectedOccupation = occupationSelect.value;
+
+            // Reset loan type options
+            loanTypeSelect.innerHTML = '<option value="">Select loan type</option>';
+
+            if (selectedOccupation === "Salaried") {
+                // Add loan types for salaried individuals
+                loanTypeSelect.innerHTML += '<option value="Personal Loan">Personal Loan</option>' +
+                    '<option value="Home Loan">Home Loan</option>' +
+                    '<option value="Car Loan">Car Loan</option>';
+            } else if (selectedOccupation === "Business Owner") {
+                // Add loan types for business owners
+                loanTypeSelect.innerHTML += '<option value="Business Loan">Business Loan</option>';
+            } else if (selectedOccupation === "Self-employed Professional") {
+                // Add loan types for self-employed professionals
+                loanTypeSelect.innerHTML += '<option value="Profession Loan">Profession Loan</option>' +
+                    '<option value="Loan for Other Professions">Loan for Other Professions</option>';
+            }
+            // Add other occupation-specific loan types as needed
+        }
+        
+
+        function getCityStateFromPincode(pincode) {
+            const url = `https://api.postalpincode.in/pincode/${pincode}`;
+
+            // Make an HTTP GET request to the API
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    // Check if the API response is successful
+                    if (data && data[0].Status === "Success") {
+                        const city = data[0].PostOffice[0].District;
+                        const state = data[0].PostOffice[0].State;
+                        document.getElementById("city").value = city;
+                        document.getElementById("stateName").innerHTML = `<option value="${state}">${state}</option>`;
+                    } else {
+                        console.log("Invalid pincode");
+                    }
+                })
+                .catch(error => {
+                    console.log("An error occurred:", error);
+                });
+        }
+document.getElementById("loan-form").addEventListener("submit", function (event) {
+event.preventDefault();
+
+var nameField = document.getElementById("name");
+var phoneField = document.getElementById("number");
+var occupation = document.getElementById("occupation");
+var loan_type = document.getElementById("loan_type");
+var pincode = document.getElementById("pincode");
+var city = document.getElementById("city");
+var stateName = document.getElementById("stateName");
+var message = document.getElementById("message");
+
+var isValid = true;
+var messageDiv = document.getElementById("messageDiv"); // Get the message div element
+
+
+// Your form validation code
+// For simplicity, let's assume all fields are required and must not be empty
+if (
+  nameField.value.trim() === "" ||
+  phoneField.value.trim() === "" ||
+  occupation.value.trim() === "" ||
+  loan_type.value.trim() === "" ||
+  pincode.value.trim() === "" ||
+  city.value.trim() === "" ||
+  stateName.value.trim() === "" ||
+  message.value.trim() === ""
+) {
+  isValid = false;
+}
+
+if (isValid) {
+  const formData = {
+    name: nameField.value.trim(),
+    phone_no: phoneField.value.trim(),
+    occupation: occupation.value.trim(),
+    loan_type: loan_type.value.trim(),
+    pincode: pincode.value.trim(),
+    city: city.value.trim(),
+    state: stateName.value.trim(),
+    message: message.value.trim(),
+  };
+
+
+  fetch("https://crm.myzeon.com/loancrm/api/cutomer-data-wp-post", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+  })
+    .then(response => {
+      if (response.ok) {
+        console.log("Form data submitted successfully!");
+        // You can handle the success response here if needed
+
+        // Show a success message on the page
+        messageDiv.innerHTML = "Form data submitted successfully!";
+         window.location.href = "https://www.myzeon.com/?page_id=9527";
+        
+
+        // Reset the form fields
+        nameField.value = "";
+        phoneField.value = "";
+        occupation.value = "";
+        loan_type.value = "";
+        pincode.value = "";
+        city.value = "";
+        stateName.value = "";
+        message.value = "";
+        
+      } 
+      else {
+        console.log("Failed to submit form data. Server returned status:", response.status);
+        // You can handle the error response here if needed
+
+        // Show an error message on the page
+        messageDiv.innerHTML = "Failed to submit form data. Please try again later.";
+      }
+    })
+    .catch(error => {
+      console.log("An error occurred:", error);
+      // Handle any other errors that may occur during the fetch
+
+      // Show an error message on the page
+      messageDiv.innerHTML = "An error occurred. Please try again later.";
+    });
+} else {
+  // If required fields are not filled, show an alert to the user
+  alert("Please fill all required fields.");
+}
+});
+
+
+
+
+// $(document).ready(function() {
+//             $("#myForm").submit(function(event) {
+//                 var name = $("#name").val();
+//                 var number = $("#number").val();
+//                 var occupation = $("#occupation").val();
+//                 var pincode = $("#pincode").val();
+//                 var city = $("#city").val();
+//                 var state = $("#state").val();
+
+                function validateForm() {
+            var isValid = true;
+
+                // Regular expressions for validation
+                var nameRegex = /^[a-zA-Z ]+$/;
+                var numberRegex = /^[0-9]+$/;
+                var pincodeRegex = /^[0-9]{6}$/;
+
+                var errorMessages = [];
+                // Reset error messages
+var errorMessages = document.querySelectorAll(".error-message");
+            errorMessages.forEach(function (errorMessage) {
+                errorMessage.style.display = "none";
+            });
+
+                // Name validation
+                if (!name.match(nameRegex)) {
+                    errorMessages.push("Please enter a valid name.");
+                }
+
+                // Number validation
+                if (!number.match(numberRegex)) {
+                    errorMessages.push("Please enter a valid number.");
+                }
+
+                // Occupation validation
+                if (occupation.length < 3) {
+                    errorMessages.push("Occupation should be at least 3 characters.");
+                }
+
+                // Pincode validation
+                if (!pincode.match(pincodeRegex)) {
+                    errorMessages.push("Please enter a valid 6-digit pin code.");
+                }
+
+                // City validation
+                if (city.length < 2) {
+                    errorMessages.push("City should be at least 2 characters.");
+                }
+
+                // State validation
+                if (state.length < 2) {
+                    errorMessages.push("State should be at least 2 characters.");
+                }
+
+                // Display error messages or submit the form
+                if (errorMessages.length > 0) {
+                    event.preventDefault(); // Prevent form submission
+                    $("#errorMessages").html(errorMessages.join("<br>")).show();
+                } else {
+                    $("#errorMessages").html("").hide();
+                }
+                }
+
+
+       
+       
+    </script>
+</body>
+</html>

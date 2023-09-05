@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <!-- The jQuery append() method inserts content AT THE END of the selected HTML elements.
+    append() - Inserts content at the end of the selected elements
+    prepend() - Inserts content at the beginning of the selected elements
+    after() - Inserts content after the selected elements
+    before() - Inserts content before the selected elements -->
+
+    <p>This is a first paragraph</p>
+    <p>This is a second paragraph</p>
+    <ol>
+        <li>It is list item</li>
+        <li>It is list item</li>
+        <li>It is list item</li>
+        <li>It is list item</li>
+    </ol>
+    <button id="btn1">Append text</button>
+    <button id="btn2">Append list item</button>
+    <script>
+
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("p").append(" <b>written by mannupal</b> ");
+            });
+
+            $("#btn2").click(function () {
+                $("ol").append(" <li>written by mannupal</li> ");
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

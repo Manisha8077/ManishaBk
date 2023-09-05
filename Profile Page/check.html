@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS for profile page -->
+    <style>
+        .profile-header {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .profile-details {
+            padding: 2rem 0;
+        }
+
+        .profile-details h1 {
+            font-size: 2rem;
+        }
+
+        .profile-details p {
+            font-size: 1.2rem;
+        }
+
+        .interests-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .interests-list li {
+            display: inline;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 profile-header">
+                <img src="user-avatar.jpg" alt="User Image" class="profile-image img-fluid">
+                <h1>User's Name</h1>
+                <p>Email: user@example.com</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 profile-details">
+                <h2>Personal Information</h2>
+                <p>Mobile: +1234567890</p>
+                <p>Date of Birth: January 1, 1990</p>
+                <p>Address: 123 Main Street, City, Country</p>
+                <p>Gender: Female</p>
+            </div>
+            <div class="col-md-6 profile-details">
+                <h2>Interests</h2>
+                <ul class="interests-list">
+                    <li>Reading</li>
+                    <li>Traveling</li>
+                    <li>Cooking</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery if needed -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

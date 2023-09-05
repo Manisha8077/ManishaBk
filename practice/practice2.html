@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Add your validation logic here
+            $("#loan-form").submit(function(event) {
+                // Prevent the form from submitting
+                event.preventDefault();
+
+                // Add your validation logic here
+                // For example, check if fields are not empty and meet specific criteria
+                
+                // If validation is successful, you can submit the form or perform other actions
+                // Otherwise, display error messages to the user
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Loan Application Form</h1>
+    <form id="loan-form">
+        <label for="loan-amount">Desired Loan Amount:</label>
+        <input type="text" id="loan-amount" name="loan-amount" required><br>
+
+        <label for="monthly-income">Monthly Income:</label>
+        <input type="text" id="monthly-income" name="monthly-income" required><br>
+
+        <label for="employment-status">Employment Status:</label>
+        <input type="text" id="employment-status" name="employment-status" required><br>
+
+        <label for="tenure">Tenure (in months):</label>
+        <input type="text" id="tenure" name="tenure" required><br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br>
+
+        <label for="zipcode">Zip Code:</label>
+        <input type="text" id="zipcode" name="zipcode" required><br>
+
+        <label for="bank-name">Select Bank Name:</label>
+        <select id="bank-name" name="bank-name" required>
+            <option value="">Select Bank</option>
+            <option value="Bank A">Bank A</option>
+            <option value="Bank B">Bank B</option>
+            <option value="Bank C">Bank C</option>
+        </select><br>
+
+        <label for="primary-account">Primary Bank Account:</label>
+        <input type="text" id="primary-account" name="primary-account" required><br>
+
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" rows="4"></textarea><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

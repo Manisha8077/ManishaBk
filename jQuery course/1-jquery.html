@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Html</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- jQuery html() method is used to change the entire content of the selected elements. It replaces the selected element content with new contents.
+    Syntax:
+
+$(selector).html()  
+It is used to return content.
+
+$(selector).html(content)  
+It is used to set content.
+
+$(selector).html(function (index, currentcontent)) 
+Index: It shows the index position of the element in the set.
+Currentcontent: It shows the current HTML content of the selected element. 
+It is used to set content by calling function.
+    -->
+<div>
+    <p>It is jquery tutorial</p>
+    <p>this is jquery text</p>
+    <button id="btn">Click here to change the content of all p elements</button>
+</div>
+<script>
+    $(document).ready(function () {
+      $("#btn").click(function(){
+      $("p").html("hello world");
+      });
+    });
+</script>
+</body>
+
+</html>

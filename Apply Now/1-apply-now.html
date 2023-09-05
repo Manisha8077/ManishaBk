@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ <style>
+ .error-message {
+ color: red;
+ display: none;
+ }
+ </style>
+</head>
+
+<body>
+
+
+ <div class="container mt-5">
+ <form id="loan-form" id="apply_form">
+ <div class="form-row">
+ <div class="col-md-6 form-group">
+ <label for="full_name">Enter Full Name</label><span style="color: red;">*</span>
+ <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
+ <div class="error-message" id="name-error">Please enter a valid name.</div>
+ </div>
+ <div class="col-md-6 form-group">
+
+ <label for="phone_number">Enter Number</label><span style="color: red;">*</span>
+
+ <input type="tel" name="phone_no" id="number" class="form-control" placeholder="Enter your phone number" required maxlength="10">
+ <div class="error-message" id="phone-error">Please enter a valid phone number.</div>
+ </div>
+ </div>
+ <div class="form-row">
+ <div class="col-md-6 form-group">
+ <label for="occupation">Occupation</label><span style="color: red;">*</span>
+ <select name="occupation" id="occupation" class="form-control" onchange="handleOccupationChange()" required>
+ <option value="" selected> Select occupation</option>
+ <option value="Salaried">Salaried</option>
+ <option value="Business Owner">Business Owner</option>
+ <option value="Self-employed Professional">Self-employed Professional</option>
+ </select>
+ <div class="error-message" id="occupation-error">Please enter a valid occupation.</div>
+ </div>
+ <div class="col-md-6 form-group">
+ <label for="loan_type">Loan Type</label><span style="color: red;">*</span>
+ <select name="loan_type" id="loan_type" class="form-control" required>
+ <option value="">Select loan type</option>
+ </select>
+ <div class="error-message" id="loan-error">Please select a loan type.</div>
+ </div>
+ </div>
+ <div class="form-row">
+ <div class="col-md-4 form-group">
+ <label for="pincode">Enter Pincode</label><span style="color: red;">*</span>
+ <input type="number" name="pincode" id="pincode" class="form-control" placeholder="Enter city pincode">
+ <div class="error-message" id="pincode-error">Please enter a valid pincode.</div>
+ </div>
+ <div class="col-md-4 form-group">
+ <label for="city">Enter City</label><span style="color: red;">*</span>
+ <input type="text" name="city" id="city" class="form-control" placeholder="Enter your city" required>
+ <div class="error-message" id="city-error">Please enter a valid city.</div>
+ </div>
+ <div class="col-md-4 form-group">
+ <label for="message">State</label><span style="color: red;">*</span>
+ <select id="stateName" class="form-control" >
+ <option value="nocityenter">Select state</option>
+ </select>
+ <div class="error-message" id="state-error">Please select a state.</div>
+ </div>
+ </div>
+ <div class="col-md-14 form-group">
+ <label for="message">Message or Comment</label><span style="color: red;">*</span>
+ <textarea name="message" id="message" value="message" class="form-control" rows="4" placeholder="Write your message"></textarea>
+ <div class="error-message" id="message-error">Please enter a valid message.</div>
+ </div>
+ <div class="text-center">
+ <button type="button" id="btnSubmit" class="btn btn-primary">Submit</button>
+ </div>
+ </form>
+
+ </div>
+
+
+ <script>
+ function handleOccupationChange() {
+ var occupationSelect = document.getElementById("occupation");
+ var loanTypeSelect = document.getElementById("loan_type");
+ var selectedOccupation = occupationSelect.value;
+
+ // Reset loan type options
+ loanTypeSelect.innerHTML = '<option value="">Select loan type</option>';
+ if (selectedOccupation === "Salaried") {
+ // Add loan types for salaried individuals
+ loanTypeSelect.innerHTML += '<option value="Personal Loan">Personal Loan</option>' +
+ '<option value="Home Loan">Home Loan</option>' +
+ '<option value="Car Loan">Car Loan</option>';
+ } else if (selectedOccupation === "Business Owner") {
+ // Add loan types for business owners
+ loanTypeSelect.innerHTML += '<option value="Business Loan">Business Loan</option>';
+ } else if (selectedOccupation === "Self-employed Professional") {
+ // Add loan types for self-employed professionals
+ loanTypeSelect.innerHTML += '<option value="Profession Loan">Profession Loan</option>' +
+ '<option value="Loan for Other Professions">Loan for Other Professions</option>';
+ }
+ // Add other occupation-specific loan types as needed
+ }
+
+ $(document).ready(function() {
+ // Clear existing error messages
+ $('.error-message').hide();
+
+
+ $("#btnSubmit").on("click", function() {
+
+ var isValid = true;
+
+ // Clear existing error messages
+ $('.error-message').hide();
+
+ // Validate name
+ var name = $('#name').val();
+ if (name === '') {
+ $('#name-error').show();
+ isValid = false;
+ }
+
+ // Validate number
+ var number = $('#number').val();
+ if (number === '')
+
+ {
+     $("#phone-error").text('*Please Enter Mobile');
+     $("#phone-error").css('color', 'red');
+     return false;
+         }
+    else{
+        const mobileNumberPattern = /^[6-9]\d{9}$/;
+                    if (mobileNumberPattern.test(number)) {
+                        // $("#mobileError").remove();
+      
+                      
+                    } else {
+                        console.log("not true");
+                        $("#phone-error").show();
+                        $("#phone-error").text('*Please Enter Valid Mobile number');
+                        $("#phone-error").css('color', 'red');
+                        return false;
+                    }
+                    $("#phone-error").remove();
+
+    }     
+ 
+ 
+ 
+
+
+ // Validate occupation
+ var occupation = $('#occupation').val();
+ if (occupation === '') {
+ $('#occupation-error').show();
+ isValid = false;
+ }
+
+ // Validate loan type
+ var loanType = $('#loan_type').val();
+ if (loanType === '') {
+ $('#loan-error').show();
+ isValid = false;
+ }
+
+ // Validate pincode
+ var pincode = $('#pincode').val();
+ if (pincode === '') {
+ $('#pincode-error').show();
+ isValid = false;
+ }
+
+ // Validate city
+ var city = $('#city').val();
+ if (city === '') {
+ $('#city-error').show();
+ isValid = false;
+ }
+
+ // Validate state
+ var state = $('#stateName').val();
+ if (state === 'nocityenter') {
+ $('#state-error').show();
+ isValid = false;
+ }
+
+ // Validate message
+ var message = $('#message').val();
+ if (message === '') {
+ $('#message-error').show();
+ isValid = false;
+ }
+
+ // If all fields are valid, submit the form
+ if (isValid) {
+
+ var name = $('#name').val();
+ var number = $('#number').val();
+ var occupation = $('#occupation').val();
+ var loanType = $('#loan_type').val();
+ var pincode = $('#pincode').val();
+ var city = $('#city').val();
+ var state = $('#stateName').val();
+ var message = $('#message').val();
+
+ $.ajax({
+ url: 'https://crm.myzeon.com/loancrm/api/cutomer-data-wp-post', // Replace with your server endpoint
+ type: 'POST', // Change to 'GET' or 'POST' depending on your needs
+ data: {'name':name,'phone_no':number,'occupation':occupation,'pincode':pincode,'city':city,'message':message},
+ success: function(response) {
+ // Handle success response here
+ alert('Form submitted successfully!');
+ },
+ error: function() {
+ // Handle error here
+ alert('Error submitting the form.');
+ }
+ });
+
+
+
+ // $('#loan-form').submit();
+ }
+
+ });
+
+
+ $('#pincode').on('input', function() {
+ var pincode = $(this).val(); // Get the value of the input field
+ // console.log("input"+inputValue);
+ // $('#output').text('Input value: ' + inputValue); // Update the output element with the value
+
+ if (pincode) {
+ $.ajax({
+ url: 'https://api.postalpincode.in/pincode/' + pincode,
+ type: 'GET',
+ dataType: 'json',
+ success: function(response) {
+ if (response[0].Status === 'Success') {
+ var data = response[0].PostOffice[0];
+
+ // Set District and State values
+ $('#city').val(data.District);
+
+ try {
+ var state = data.State;
+ var stateSelect = $('#stateName');
+ stateSelect.empty();
+ stateSelect.append($('<option value="">Select a State</option>'));
+ stateSelect.append($('<option value="' + state + '">' + state + '</option>'));
+ } catch (error) {
+ console.log("error to get state");
+
+ }
+
+ // $('#stateName').val(data.State);
+ } else {
+ $('#city').val('Not found');
+ $('#stateName').val('Not found');
+ }
+ },
+ error: function() {
+ $('#city').val('Error');
+ $('#stateName').val('Error');
+ }
+ });
+ }
+
+
+ });
+
+
+
+ console.log("jquery run");
+
+
+
+ });
+ </script>
+
+
+
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+
+ </head>
+</body>
+
+</html>

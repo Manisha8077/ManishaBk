@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Method</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+<body>
+    <div id="div1" style="background-color: aquamarine; border: 2px solid; text-align: center; height: 100px; width: 400px;">
+        This is some text
+        <p>this is paragraph1</p>
+        <p>this is paragraph2</p>
+    </div>
+    <br>
+    <button>Remove Div Element</button>
+    <script>
+$(document).ready(function () {
+    $("button").click(function(){
+   $("#div1").remove();
+});
+});
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute value</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+
+</head>
+<body>
+    <!-- The jQuery attr() method is used to get attribute values. -->
+    <p><a href="https://www.myzeon.com/" id="website">myzeon</a></p>
+    <button>Show href Value</button>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function(){
+                alert( $("#website").attr("href"));
+            });
+        });
+    </script>
+    
+</body>
+</html>
