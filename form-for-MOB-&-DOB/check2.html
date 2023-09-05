@@ -1,58 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
 
-<!-- jQuery UI -->
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<style>
+		body {
+			text-align: center;
+		}
 
-<style>
-    #calendar-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    /* height: 25px; */
-}
-/* #datepicker{
-    height: 25px;
-} */
+		.contactform-buttons {
+			background-color: #4CAF50;
+			/* Green */
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+		}
+	</style>
 
-</style>
+	<script>
+		$(document).ready(function () {
+			$('.error').hide();
+			$('#submit').click(function () {
+				var name = $('#name').val();
+				var email = $('#email').val();
+
+				if (name == '') {
+					$('#name').next().show();
+					return false;
+				}
+				if (email == '') {
+					$('#email').next().show();
+					return false;
+				}
+				if (IsEmail(email) == false) {
+					$('#invalid_email').show();
+					return false;
+				}
+				$.post("", $("#myform").serialize(),
+				function (response) {
+					$('#myform').fadeOut('slow', function () {
+						$('#correct').html(response);
+						$('#correct').fadeIn('slow');
+					});
+				});
+				return false;
+			});
+		});
+		function IsEmail(email) {
+			var regex =
+/^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			if (!regex.test(email)) {
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+	</script>
 </head>
+
 <body>
-    <form id="myForm">
-        <label for="datepicker">Select a Date:</label>
-        <input type="text" id="datepicker" name="datepicker">
-        <i id="calendar-icon" class="fa fa-calendar"></i>
-        <button type="submit">Submit</button>
-    </form>
-    <script>
-        $(function() {
-    $("#datepicker").datepicker({
-        dateFormat: "yy-mm-dd", // Customize the date format
-        showOn: "button",      // Show the calendar when clicking the button
-        // buttonImage: "https://cdn-icons-png.flaticon.com/512/2370/2370264.png", // Set the calendar icon image
-        buttonImageOnly: true, // Display only the icon, no input field
-    });
+	<center>
+		<h1 style="color:green">GeeksforGeeks</h1>
 
-    $("#calendar-icon").click(function() {
-        $("#datepicker").datepicker("show");
-    });
+		<form action="" method="post" id="contactform">
 
-    $("#myForm").submit(function(event) {
-        event.preventDefault();
-        var selectedDate = $("#datepicker").val();
-        alert("Selected Date: " + selectedDate);
-        // You can process the selected date here.
-    });
-});
+			<label for="name">Name:</label>
+			<input name="name"
+				id="name"
+				type="text"
+				placeholder="Please enter your name"
+				class="contact-input">
+			<span class="error">
+				Enter your name here
+			</span>
 
-    </script>
+			<label for="email">Email :</label>
+			<input name="email"
+				id="email"
+				type="text"
+				placeholder="Please enter your email"
+				class="contact-input">
+			<span class="error">
+				Enter your email-id here
+			</span>
+			<span class="error"
+				id="invalid_email">
+				Email-id is invalid
+			</span>
+
+			<br /><br />
+			<input type="submit"
+				class="contactform-buttons"
+				id="submit"
+				value="Send" />
+
+			<input type="reset"
+				class="contactform-buttons"
+				id=""
+				value="Clear" />
+		</form>
+
+		<div id="correct"
+			style="color:gray;">
+		</div>
+	</center>
 </body>
 </html>
