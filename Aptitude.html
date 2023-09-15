@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aptitude Test</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        #timer {
+            /* height: 100vh; */
+            font-size: larger;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="text-center">
+        <h1><strong>Aptitude Test</strong></h1>
+        <h4><strong>Total Marks : 34</strong></h4>
+        <hr>
+
+        <div>
+            <h5><strong> Start 15-Minute Test</strong>
+                <div class="tim" id="timer"></div>
+            </h5>
+        </div>
+
+
+        <!-- Display Score -->
+        <div id="scoreDisplay" class="mt-3" style="font-size: x-large;"></div>
+
+        <hr>
+    </div>
+    <div class="container mt-4">
+        <h2> <strong><u>Reasoning</u></strong> </h2>
+
+        <!-- Question 1 -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 1:</strong> Look at this series: 2, 1, (1/2), (1/4),... What number should come
+                    next?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q10ptionA" value="optionA">
+                    <label class="form-check-label" for="q10ptionA">
+                        A) (1/3)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q10ptionB" value="optionB">
+                    <label class="form-check-label" for="q10ptionB">
+                        B) (1/16)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q10ptionC" value="optionC">
+                    <label class="form-check-label" for="q10ptionC">
+                        C) (2/8)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1OptionD" value="optionD">
+                    <label class="form-check-label" for="q1OptionD">
+                        D) (1/8)
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 2:</strong> Look at this series: 7, 10, 8, 11, 9, 12... What number should come
+                    next?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2OptionA" value="optionA">
+                    <label class="form-check-label" for="q2OptionA">
+                        A) 7
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2OptionB" value="optionB">
+                    <label class="form-check-label" for="q2OptionB">
+                        B) 10
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2OptionC" value="optionC">
+                    <label class="form-check-label" for="q2OptionC">
+                        C) 12
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2OptionD" value="optionD">
+                    <label class="form-check-label" for="q2OptionD">
+                        D) 13
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 3:</strong> Tanya is older than Tanuj. Tom is older than Tanya.Tanvi is younger than
+                    Tanya. Who is the eldest one?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3OptionA" value="optionA">
+                    <label class="form-check-label" for="q3OptionA">
+                        A) Tanya
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3OptionB" value="optionB">
+                    <label class="form-check-label" for="q3OptionB">
+                        B) Tanuj
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3OptionC" value="optionC">
+                    <label class="form-check-label" for="q3OptionC">
+                        C) Tanvi
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3OptionD" value="optionD">
+                    <label class="form-check-label" for="q3OptionD">
+                        D) Tom
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 4:</strong> Find the number of triangels in the given figure.
+                <div class="img1"><img src="file:///home/manisha/Downloads/en_142063306(1).png" alt="diagram img"
+                        class="img-fluid"></div>
+                </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4OptionA" value="optionA">
+                    <label class="form-check-label" for="q4OptionA">
+                        A) 8
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4OptionB" value="optionB">
+                    <label class="form-check-label" for="q4OptionB">
+                        B) 10
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4OptionC" value="optionC">
+                    <label class="form-check-label" for="q4OptionC">
+                        C) 12
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4OptionD" value="optionD">
+                    <label class="form-check-label" for="q4OptionD">
+                        D) 14
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Question 5-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 5:</strong> If A is the brother of B; B is the sister of C; and C is the father of
+                    D, how D is related to A?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5OptionA" value="optionA">
+                    <label class="form-check-label" for="q5OptionA">
+                        A) Brother
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5OptionB" value="optionB">
+                    <label class="form-check-label" for="q5OptionB">
+                        B) Sister
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5OptionC" value="optionC">
+                    <label class="form-check-label" for="q5OptionC">
+                        C) Nephew
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5OptionD" value="optionD">
+                    <label class="form-check-label" for="q5OptionD">
+                        D) Cannot be determined
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Question 6 -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 6:</strong>
+                <div class="img2">
+                    <img src="https://www.indiabix.com/_files/images/verbal-reasoning/character-puzzles/4-20-1-45.png"
+                        alt="diagram img" class="img-fluid">
+                </div>
+                </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6OptionA" value="optionA">
+                    <label class="form-check-label" for="q6OptionA">
+                        A) 18
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6OptionB" value="optionB">
+                    <label class="form-check-label" for="q6OptionB">
+                        B) 12
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6OptionC" value="optionC">
+                    <label class="form-check-label" for="q6OptionC">
+                        C) 9
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6OptionD" value="optionD">
+                    <label class="form-check-label" for="q6OptionD">
+                        D) 6
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 7:</strong> CMM, EOO, GQQ,______, KUU</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7" id="q7OptionA" value="optionA">
+                    <label class="form-check-label" for="q7OptionA">
+                        A) GRR
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7" id="q7OptionB" value="optionB">
+                    <label class="form-check-label" for="q7OptionB">
+                        B) GSS
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7" id="q7OptionC" value="optionC">
+                    <label class="form-check-label" for="q7OptionC">
+                        C) ISS
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7" id="q7OptionD" value="optionD">
+                    <label class="form-check-label" for="q7OptionD">
+                        D) ITT
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <h2><strong><u>Verbal(English)</u></strong></h2>
+        <!-- Question 1-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 1:</strong> I settled _______ Canada last year.</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8" id="q21OptionA" value="optionA">
+                    <label class="form-check-label" for="q21OptionA">
+                        A) at
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8" id="q21OptionB" value="optionB">
+                    <label class="form-check-label" for="q21OptionB">
+                        B) In
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8" id="q21OptionC" value="optionC">
+                    <label class="form-check-label" for="q21OptionC">
+                        C) off
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8" id="q21OptionD" value="optionD">
+                    <label class="form-check-label" for="q21OptionD">
+                        D) on
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Question 2-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 2:</strong> It gives me immense pleasure _______ you to the part.</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9" id="q22OptionA" value="optionA">
+                    <label class="form-check-label" for="q22OptionA">
+                        A) to invite
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9" id="q22OptionB" value="optionB">
+                    <label class="form-check-label" for="q22OptionB">
+                        B) for invitation
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9" id="q22OptionC" value="optionC">
+                    <label class="form-check-label" for="q22OptionC">
+                        C) in inviting
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9" id="q22OptionD" value="optionD">
+                    <label class="form-check-label" for="q22OptionD">
+                        D) inviting
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 3:</strong> The past tense of 'Spend' is</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q10" id="q23OptionA" value="optionA">
+                    <label class="form-check-label" for="q23OptionA">
+                        A) spended
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q10" id="q23OptionB" value="optionB">
+                    <label class="form-check-label" for="q23OptionB">
+                        B) spent
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q10" id="q23OptionC" value="optionC">
+                    <label class="form-check-label" for="q23OptionC">
+                        C) spented
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q10" id="q23OptionD" value="optionD">
+                    <label class="form-check-label" for="q23OptionD">
+                        D) spentet
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Question 4-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 4:</strong> _______ he is a hardd worker, but his quality of work is not of a
+                    desireable level.</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q11" id="q24OptionA" value="optionA">
+                    <label class="form-check-label" for="q24OptionA">
+                        A) despite
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q11" id="q24OptionB" value="optionB">
+                    <label class="form-check-label" for="q24OptionB">
+                        B) because
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q11" id="q24OptionC" value="optionC">
+                    <label class="form-check-label" for="q24OptionC">
+                        C) somehow
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q11" id="q24OptionD" value="optionD">
+                    <label class="form-check-label" for="q24OptionD">
+                        D) although
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Question 5-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 5:</strong> I am satisfied _______ his Innocence.</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q12" id="q25OptionA" value="optionA">
+                    <label class="form-check-label" for="q25OptionA">
+                        A) at
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q12" id="q25OptionB" value="optionB">
+                    <label class="form-check-label" for="q25OptionB">
+                        B) with
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q12" id="q25OptionC" value="optionC">
+                    <label class="form-check-label" for="q25OptionC">
+                        C) for
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q12" id="q25OptionD" value="optionD">
+                    <label class="form-check-label" for="q25OptionD">
+                        D) of
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Question 6-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 6:</strong> Choose the correctly spelt word?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q13" id="q26OptionA" value="optionA">
+                    <label class="form-check-label" for="q26OptionA">
+                        A) Neccessary
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q13" id="q26OptionB" value="optionB">
+                    <label class="form-check-label" for="q26OptionB">
+                        B) Necesarry
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q13" id="q26OptionC" value="optionC">
+                    <label class="form-check-label" for="q26OptionC">
+                        C) Necassary
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q13" id="q26OptionD" value="optionD">
+                    <label class="form-check-label" for="q26OptionD">
+                        D) Necessary
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Question 7-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 7:</strong> My cousin has invested a lot of money _______ farming.</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q14" id="q27OptionA" value="optionA">
+                    <label class="form-check-label" for="q27OptionA">
+                        A) into
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q14" id="q27OptionB" value="optionB">
+                    <label class="form-check-label" for="q27OptionB">
+                        B) in
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q14" id="q27OptionC" value="optionC">
+                    <label class="form-check-label" for="q27OptionC">
+                        C) on
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q14" id="q27OptionD" value="optionD">
+                    <label class="form-check-label" for="q27OptionD">
+                        D) for
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Question 8-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 8:</strong> Siva has no control _______ his temper.</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q15" id="q28OptionA" value="optionA">
+                    <label class="form-check-label" for="q28OptionA">
+                        A) at
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q15" id="q28OptionB" value="optionB">
+                    <label class="form-check-label" for="q28OptionB">
+                        B) in
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q15" id="q28OptionC" value="optionC">
+                    <label class="form-check-label" for="q28OptionC">
+                        C) after
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q15" id="q28OptionD" value="optionD">
+                    <label class="form-check-label" for="q28OptionD">
+                        D) over
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Question 9-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 9:</strong> Choose the correct word which is similar to GROW.</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q16" id="q29OptionA" value="optionA">
+                    <label class="form-check-label" for="q29OptionA">
+                        A) increase
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q16" id="q29OptionB" value="optionB">
+                    <label class="form-check-label" for="q29OptionB">
+                        B) develop
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q16" id="q29OptionC" value="optionC">
+                    <label class="form-check-label" for="q29OptionC">
+                        C) sprout
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q16" id="q29OptionD" value="optionD">
+                    <label class="form-check-label" for="q29OptionD">
+                        D) shoot up
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Question 10-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 10:</strong> I took _______ my work.</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q17" id="q20OptionA" value="optionA">
+                    <label class="form-check-label" for="q20OptionA">
+                        A) Rest
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q17" id="q20OptionB" value="optionB">
+                    <label class="form-check-label" for="q20OptionB">
+                        B) Trouble
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q17" id="q20OptionC" value="optionC">
+                    <label class="form-check-label" for="q20OptionC">
+                        C) Leave
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q17" id="q20OptionD" value="optionD">
+                    <label class="form-check-label" for="q20OptionD">
+                        D) Peace
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <h2><strong><u>Quantitative Aptitude</u></strong></h2>
+        <!-- Question 1-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 1:</strong> 40% of 280 = ?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q18" id="q2OptionA" value="optionA">
+                    <label class="form-check-label" for="q2OptionA">
+                        A) 112
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q18" id="q2OptionB" value="optionB">
+                    <label class="form-check-label" for="q2OptionB">
+                        B) 115
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q18" id="q2OptionC" value="optionC">
+                    <label class="form-check-label" for="q2OptionC">
+                        C) 116
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q18" id="q2OptionD" value="optionD">
+                    <label class="form-check-label" for="q2OptionD">
+                        D) 120
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Question 2-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 2:</strong> A moneylender charges Rs. 180 as simple interest on a sum of 600 for
+                    four months. What is the rate of interest per annum?
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q19" id="q2OptionA" value="optionA">
+                    <label class="form-check-label" for="q2OptionA">
+                        A) 80%
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q19" id="q2OptionB" value="optionB">
+                    <label class="form-check-label" for="q2OptionB">
+                        B) 85%
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q19" id="q2OptionC" value="optionC">
+                    <label class="form-check-label" for="q2OptionC">
+                        C) 90%
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q19" id="q2OptionD" value="optionD">
+                    <label class="form-check-label" for="q2OptionD">
+                        D) 95%
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Question 3-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 3:</strong> If 4915 - 1 is exactly divisible by:</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q20" id="q2OptionA" value="optionA">
+                    <label class="form-check-label" for="q2OptionA">
+                        A) 5
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q20" id="q2OptionB" value="optionB">
+                    <label class="form-check-label" for="q2OptionB">
+                        B) 6
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q20" id="q2OptionC" value="optionC">
+                    <label class="form-check-label" for="q2OptionC">
+                        C) 9
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q20" id="q2OptionD" value="optionD">
+                    <label class="form-check-label" for="q2OptionD">
+                        D) 7
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Question 4-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 4:</strong> Arjun buys the same toy at Rs. 120 but sells it at Rs 100. What is
+                    profit/loss percent?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q21" id="q4OptionA" value="optionA">
+                    <label class="form-check-label" for="q4OptionA">
+                        A) 20%
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q21" id="q4OptionB" value="optionB">
+                    <label class="form-check-label" for="q4OptionB">
+                        B) 16.7%
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q21" id="q4OptionC" value="optionC">
+                    <label class="form-check-label" for="q4OptionC">
+                        C) 10%
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q21" id="q4OptionD" value="optionD">
+                    <label class="form-check-label" for="q4OptionD">
+                        D) 17.6%
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Question 5-->
+        <div class="card mt-4">
+            <div class="card-body">
+                <p><strong>Question 5:</strong> The fourth proportional to 5 : 8 :: 15 is:?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q22" id="q2OptionA" value="optionA">
+                    <label class="form-check-label" for="q2OptionA">
+                        A) 24
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q22" id="q2OptionB" value="optionB">
+                    <label class="form-check-label" for="q2OptionB">
+                        B) 19
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q22" id="q2OptionC" value="optionC">
+                    <label class="form-check-label" for="q2OptionC">
+                        C) 20
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q22" id="q2OptionD" value="optionD">
+                    <label class="form-check-label" for="q2OptionD">
+                        D) 18
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-4">
+            <h2><strong><u>General Question</u></strong></h2>
+            <!-- Question 1-->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <p><strong>Question 1:</strong> CIBIL stands for_______.</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q31" id="q2OptionA" value="optionA">
+                        <label class="form-check-label" for="q2OptionA">
+                            A) Credit Information Bureau of India Limited
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q31" id="q2OptionB" value="optionB">
+                        <label class="form-check-label" for="q2OptionB">
+                            B) Cash Investment & Booking India Limited
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q31" id="q2OptionC" value="optionC">
+                        <label class="form-check-label" for="q2OptionC">
+                            C) Credit and Investment Board of India Limited
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q31" id="q2OptionD" value="optionD">
+                        <label class="form-check-label" for="q2OptionD">
+                            D) None of these
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Question 2-->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <p><strong>Question 2:</strong> KYC stands for_______.</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q32" id="q2OptionA" value="optionA">
+                        <label class="form-check-label" for="q2OptionA">
+                            A) Know Your Community
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q32" id="q2OptionB" value="optionB">
+                        <label class="form-check-label" for="q2OptionB">
+                            B) Know Your Cash reserve
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q32" id="q2OptionC" value="optionC">
+                        <label class="form-check-label" for="q2OptionC">
+                            C) Know Your Customer
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q32" id="q2OptionD" value="optionD">
+                        <label class="form-check-label" for="q2OptionD">
+                            D) Key process of Your Closing
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3-->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <p><strong>Question 3:</strong> Personal Loan is a type of</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q33" id="q2OptionA" value="optionA">
+                        <label class="form-check-label" for="q2OptionA">
+                            A) Secured loan
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q33" id="q2OptionB" value="optionB">
+                        <label class="form-check-label" for="q2OptionB">
+                            B) Unsecured loan
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q33" id="q2OptionC" value="optionC">
+                        <label class="form-check-label" for="q2OptionC">
+                            C) mortgage
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q33" id="q2OptionD" value="optionD">
+                        <label class="form-check-label" for="q2OptionD">
+                            D) loans against property
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4-->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <p><strong>Question 4:</strong> ROI stands for_______.</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q34" id="q2OptionA" value="optionA">
+                        <label class="form-check-label" for="q2OptionA">
+                            A) Return On Interest
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q34" id="q2OptionB" value="optionB">
+                        <label class="form-check-label" for="q2OptionB">
+                            B) Return On Investment
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q34" id="q2OptionC" value="optionC">
+                        <label class="form-check-label" for="q2OptionC">
+                            C) Return On Income
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q34" id="q2OptionD" value="optionD">
+                        <label class="form-check-label" for="q2OptionD">
+                            D)Role On Investment
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 5-->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <p><strong>Question 5:</strong> FOIR stands for_______.</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q35" id="q2OptionA" value="optionA">
+                        <label class="form-check-label" for="q2OptionA">
+                            A) Fixed Obligation to Income Ratio
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q35" id="q2OptionB" value="optionB">
+                        <label class="form-check-label" for="q2OptionB">
+                            B) Financial Obligation on Income & Repayment 
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q35" id="q2OptionC" value="optionC">
+                        <label class="form-check-label" for="q2OptionC">
+                            C) Fundamental of Investment & Return 
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q35" id="q2OptionD" value="optionD">
+                        <label class="form-check-label" for="q2OptionD">
+                            D) Financial history of Investment & Return 
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 6-->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <p><strong>Question 6:</strong> DPD stands for_______.</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q36" id="q2OptionA" value="optionA">
+                        <label class="form-check-label" for="q2OptionA">
+                            A) Description Per Day
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q36" id="q2OptionB" value="optionB">
+                        <label class="form-check-label" for="q2OptionB">
+                            B) Demand Per Day
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q36" id="q2OptionC" value="optionC">
+                        <label class="form-check-label" for="q2OptionC">
+                            C) Days Past Due
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q36" id="q2OptionD" value="optionD">
+                        <label class="form-check-label" for="q2OptionD">
+                            D) Days Post Deposit
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 7-->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <p><strong>Question 7:</strong> EMI stands for_______.</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q37" id="q2OptionA" value="optionA">
+                        <label class="form-check-label" for="q2OptionA">
+                            A) Easy Monthly Installment
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q37" id="q2OptionB" value="optionB">
+                        <label class="form-check-label" for="q2OptionB">
+                            B) Equal monthly installment
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q37" id="q2OptionC" value="optionC">
+                        <label class="form-check-label" for="q2OptionC">
+                            C) Equity Monthly Instalment
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q37" id="q2OptionD" value="optionD">
+                        <label class="form-check-label" for="q2OptionD">
+                            D) Equated Monthly Installment
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Question 8 -->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <p><strong>Question 8:</strong> NEFT stands for_______.</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q38" id="q2OptionA" value="optionA">
+                        <label class="form-check-label" for="q2OptionA">
+                            A) Nuclear Energy Finance Team
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q38" id="q2OptionB" value="optionB">
+                        <label class="form-check-label" for="q2OptionB">
+                            B) National Electronic Funds Transfer
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q38" id="q2OptionC" value="optionC">
+                        <label class="form-check-label" for="q2OptionC">
+                            C) New England Football Team
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q38" id="q2OptionD" value="optionD">
+                        <label class="form-check-label" for="q2OptionD">
+                            D) National Employment Fund for Training
+                        </label>
+                    </div>
+                </div>
+            </div>
+<!-- question 9 -->
+
+<div class="card mt-4">
+    <div class="card-body">
+        <p><strong>Question 9:</strong> With which of the following functions of a bank would you associate the term 'collateral'?</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q39" id="q2OptionA" value="optionA">
+            <label class="form-check-label" for="q2OptionA">
+                A) Accepting deposits
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q39" id="q2OptionB" value="optionB">
+            <label class="form-check-label" for="q2OptionB">
+                B) Portfolio management
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q39" id="q2OptionC" value="optionC">
+            <label class="form-check-label" for="q2OptionC">
+                C) Collection of cheques
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q39" id="q2OptionD" value="optionD">
+            <label class="form-check-label" for="q2OptionD">
+                D) Granting loans and advances
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <div class="card-body">
+        <p><strong>Question 10:</strong> The loan amount the customer fail to repay on time is called:</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q4" id="q2OptionA" value="optionA">
+            <label class="form-check-label" for="q2OptionA">
+                A) Settled amount
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q40" id="q2OptionB" value="optionB">
+            <label class="form-check-label" for="q2OptionB">
+                B) Overdue amount
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q40" id="q2OptionC" value="optionC">
+            <label class="form-check-label" for="q2OptionC">
+                C) Written off amount
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q40" id="q2OptionD" value="optionD">
+            <label class="form-check-label" for="q2OptionD">
+                D) Outstanding amount
+            </label>
+        </div>
+    </div>
+</div>
+<!-- Question 2 -->
+<div class="card mt-4">
+    <div class="card-body">
+        <p><strong>Question 11:</strong> Which of the following statements are correct?</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q41" id="OptionA" value="optionA">
+            <label class="form-check-label" for="q2OptionA">
+                A) NBFC doesn't have bank Licence
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q41" id="OptionB" value="optionB">
+            <label class="form-check-label" for="q2OptionB">
+                B) NBFC cann't accept demand deposit
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q41" id="OptionC" value="optionC">
+            <label class="form-check-label" for="q2OptionC">
+                C) NBFC are not eligible for payment system
+            </label>
+        </div>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q41" id="OptionE" value="optionD">
+            <label class="form-check-label" for="q2OptionD">
+                D) All of these
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <div class="card-body">
+        <p><strong>Question 12:</strong> Which of the following is an example of collateralized loans?</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q42" id="OptionA" value="optionA">
+            <label class="form-check-label" for="q2OptionA">
+                A) Car Loans
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q42" id="OptionB" value="optionB">
+            <label class="form-check-label" for="q2OptionB">
+                B) Mortgage
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q42" id="OptionC" value="optionC">
+            <label class="form-check-label" for="q2OptionC">
+                C) Home Loans
+            </label>
+        </div>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q42" id="OptionE" value="optionD">
+            <label class="form-check-label" for="q2OptionD">
+                D) Business Loans
+            </label>
+        </div>
+    </div>
+</div>
+
+        </div>
+
+        <!-- Add more questions here -->
+
+        <!-- Submit Button -->
+        <button type="button" class="btn btn-primary mt-4" id="submitBtn">Submit</button>
+
+        <!-- Modal -->
+        <!-- <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modalContent"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    <!-- </div>
+                </div>
+            </div>
+        </div> -->
+
+
+        <!-- Include Bootstrap JavaScript and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script>
+            // Event listener for when the modal is about to be shown
+            $('#exampleModalLong').on('show.bs.modal', function (event) {
+                // Extract data attributes from the button triggering the modal
+                var button = $(event.relatedTarget);
+                // var title = button.data('title');
+                // var content = button.data('content');
+
+                // Populate the modal with the extracted values
+                populateModal("Your score: " + ScoreFinal + " out of 34");
+            });
+
+            function populateModal(title, content) {
+                $('#modalTitle').text(title);
+                $('#modalContent').text(content);
+            }
+
+        </script>
+
+        <!-- JavaScript for Test Scoring -->
+        <script>
+            
+            var ScoreFinal = 0;
+            $("#exampleModalLong").modal('hide');
+            // Define the correct answers here(Reasoning)
+            const correctAnswers = {
+                q1: 'optionD', // Correct answer for Question 1
+                q2: 'optionB', // Correct answer for Question 2
+                q3: 'optionD', // Correct answer for Question 3
+                q4: 'optionD', // Correct answer for Question 4
+                q5: 'optionC', // Correct answer for Question 5
+                q6: 'optionC', // Correct answer for Question 6
+                q7: 'optionC', // Correct answer for Question 7
+                //Verbal english
+                q8: 'optionB', // Correct answer for Question 1 8
+                q9: 'optionC', // Correct answer for Question 2 9
+                q10: 'optionB', // Correct answer for Question 3 10
+                q11: 'optionD', // Correct answer for Question 4 11
+                q12: 'optionA', // Correct answer for Question 5 12
+                q13: 'optionD', // Correct answer for Question 6 13
+                q14: 'optionB', // Correct answer for Question 7 14
+                q15: 'optionD', // Correct answer for Question 8 15
+                q16: 'optionB', // Correct answer for Question 9 16
+                q17: 'optionA', // Correct answer for Question 10 17
+
+                //Quantitative aptitude
+                q18: 'optionA', // Correct answer for Question 1 18
+                q19: 'optionC', // Correct answer for Question 2 19
+                q20: 'optionD', // Correct answer for Question 3 20
+                q21: 'optionB', // Correct answer for Question 4 21
+                q22: 'optionA', // Correct answer for Question 5 22
+                // general question
+                q31: 'optionA', // Correct answer for Question 1 23
+                q32: 'optionC', // Correct answer for Question 2 24
+                q33: 'optionB', // Correct answer for Question 3 25
+                q34: 'optionB', // Correct answer for Question 4 26
+                q35: 'optionA', // Correct answer for Question 5 27
+                q36: 'optionC', // Correct answer for Question 6 28
+                q37: 'optionD', // Correct answer for Question 7 29
+                q38: 'optionB', // Correct answer for Question 8 30
+
+                q39: 'optionD', // Correct answer for Question 9  31
+                q40: 'optionB', // Correct answer for Question 10 32
+                q41: 'optionD', // Correct answer for Question 11 33
+                q42: 'optionD', // Correct answer for Question 12 34
+
+
+
+                // Add more questions and answers as needed
+            };
+
+            // Function to calculate and display the score
+            function calculateScore() {
+                let score = 0;
+
+                // Loop through each question
+                for (const questionId in correctAnswers) {
+                    const selectedOption = $("input[name='" + questionId + "']:checked").val();
+                    if (selectedOption === correctAnswers[questionId]) {
+                        score++;
+                    }
+                }
+
+                // Display the score
+                $('#scoreDisplay').html('<strong>Your Score:</strong> ' + score + ' out of ' + Object.keys(correctAnswers).length);
+                ScoreFinal = score;
+
+            }
+
+            // Handle submission
+            $('#submitBtn').click(function () {
+                calculateScore();
+                clearInterval(timer); // Stop the timer
+                $("#exampleModalLong").modal('show');
+
+            });
+
+            var timer;
+            var minutes = 1;
+            var seconds = 0;
+
+            function updateTimer() {
+                if (minutes === 0 && seconds === 0) {
+                    alert("Time Over!"); // You can replace this with any action you want
+sub
+                } else {
+                    if (seconds === 0) {
+                        minutes--;
+                        seconds = 59;
+                    } else {
+                        seconds--;
+                    }
+
+                    var displayMinutes = minutes < 10 ? "0" + minutes : minutes;
+                    var displaySeconds = seconds < 10 ? "0" + seconds : seconds;
+
+                    $("#timer").text(displayMinutes + ":" + displaySeconds);
+
+                }
+            }
+
+            timer = setInterval(updateTimer, 1000);
+            // Set a timeout to submit the test after 30 minutes (30 * 60 * 1000 milliseconds)
+            setTimeout(function () {
+                clearInterval(timer); // Stop the timer
+                // window.alert("Your time is finish");
+                $("#timer").text("00" + ":" + "00");
+                console.log('time out');
+                alert("Time's up!"); 
+                calculateScore();
+                $("#exampleModalLong").modal('show');
+            }, 1 * 60 * 1000); // 30 minutes
+
+
+        </script>
+</body>
+
+</html>
